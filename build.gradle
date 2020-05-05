@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    //id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.controls', 'javafx.swing' ]
+}
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url "https://oss.jfrog.org/artifactory/libs-release" }
+}
+
+dependencies {
+
+    //implementation "com.github.jengelman.gradle.plugins:shadow:5.2.0"
+    implementation 'org.openjfx:javafx-plugin:0.0.8'
+    implementation 'org.postgresql:postgresql:42.1.4'
+    implementation 'org.hibernate:hibernate-core:5.4.11.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+//apply plugin: "com.github.johnrengelman.shadow"
+
+mainClassName = 'calito.bot.EntityTestMain'
